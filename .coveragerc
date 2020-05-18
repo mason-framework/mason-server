@@ -1,0 +1,7 @@
+[run]
+source = mason_server
+
+[report]
+exclude_lines =
+    pragma: no cover
+    pass
