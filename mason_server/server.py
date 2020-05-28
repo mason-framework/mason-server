@@ -4,12 +4,14 @@ import mason
 from mason.cli import cli
 
 import sanic
+import sanic_cors
 
 
 app = sanic.Sanic()
+sanic_cors.CORS(app)
 
 
-@app.route('/schema')
+@app.route('/library')
 async def get_schema(
         request: sanic.request.Request) -> sanic.response.HTTPResponse:
     """Returns the library schema."""

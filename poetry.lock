@@ -487,6 +487,29 @@ test = ["pytest (5.2.1)", "multidict (>=4.0,<5.0)", "gunicorn", "pytest-cov", "h
 
 [[package]]
 category = "main"
+description = "A Sanic extension adding a decorator for CORS support. Based on flask-cors by Cory Dolphin."
+name = "sanic-cors"
+optional = false
+python-versions = "*"
+version = "0.10.0.post3"
+
+[package.dependencies]
+sanic = ">=18.12.0"
+sanic-plugins-framework = ">=0.9.0"
+
+[[package]]
+category = "main"
+description = "Doing all of the boilerplate to create a Sanic Plugin, so you don't have to."
+name = "sanic-plugins-framework"
+optional = false
+python-versions = "*"
+version = "0.9.2"
+
+[package.dependencies]
+sanic = ">=18.12.0"
+
+[[package]]
+category = "main"
 description = "Python 2 and 3 compatibility utilities"
 name = "six"
 optional = false
@@ -642,7 +665,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "e49bec3c090cf62e08576715cc66ac81828c064469c6d85f56354fbf28aee932"
+content-hash = "f8d78a0eb0e5045a6c1237265db583d2909567cd227a2096c140086d9100382f"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -910,6 +933,14 @@ rfc3986 = [
 sanic = [
     {file = "sanic-20.3.0-py3-none-any.whl", hash = "sha256:7d05e82772bfbfa084b9c40197ef47e26dc1c0e352f8c34f637ef7c67585975f"},
     {file = "sanic-20.3.0.tar.gz", hash = "sha256:b4078fe0654d0304f2e86e4f35f3d2d0d5aff56cc0e6d8978838282dff645aff"},
+]
+sanic-cors = [
+    {file = "Sanic-Cors-0.10.0.post3.tar.gz", hash = "sha256:abb0f8b17d2ecb12d62ecac42ca62bfed9b07fd00ffd83219ad23b99d4df3f23"},
+    {file = "Sanic_Cors-0.10.0.post3-py2.py3-none-any.whl", hash = "sha256:b919d65643de810ed1ed15657b8bc75c310fa1ac8eb491d59deaa9404756b745"},
+]
+sanic-plugins-framework = [
+    {file = "Sanic-Plugins-Framework-0.9.2.tar.gz", hash = "sha256:e63439f238f9e070649ee5c174d952b2fbc7e845259a3839e109b4bb2fbbb163"},
+    {file = "Sanic_Plugins_Framework-0.9.2-py2.py3-none-any.whl", hash = "sha256:2949374e414a497a3b07b09800d3d0b3cdf24f3a1d3f08591488759099cb7f44"},
 ]
 six = [
     {file = "six-1.14.0-py2.py3-none-any.whl", hash = "sha256:8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c"},
