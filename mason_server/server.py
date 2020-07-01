@@ -200,12 +200,16 @@ async def setup_logging(*args):
     stream_queue = asyncio.Queue()
     stream_queue.subscribers = 0
 
+    handler = QueueHandler(stream_queue)
+
     _ROOT_LOG.setLevel(logging.INFO)
-    _ROOT_LOG.addHandler(QueueHandler(stream_queue))
+    _ROOT_LOG.addHandler(handler)
 
     sys.stdout = StreamWrapper(sys.stdout, stream_queue)
     sys.stderr = StreamWrapper(sys.stderr, stream_queue)
     app.config.stream_queue = stream_queue
+
+    logging.getLogger('sanic.access').handlers[0].setStream(sys.stdout)
 
 
 @app.listener('after_server_start')
